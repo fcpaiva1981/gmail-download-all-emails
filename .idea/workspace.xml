@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="709af90e-2cc9-4358-84f2-8d046ce14241" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/EmailBodyDTO.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/EmailBodyDTO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/EmailDataDTO.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/EmailDataDTO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/FileDTO.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/FileDTO.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/OSDirectoriesFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/OSDirectoriesFiles.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/ReadEmailFromGoogle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ReadEmailFromGoogle.py" afterDir="false" />
     </list>
@@ -167,7 +170,7 @@
       <workItem from="1750998024162" duration="22000" />
       <workItem from="1750998300901" duration="961000" />
       <workItem from="1751000002574" duration="441000" />
-      <workItem from="1751001004835" duration="15540000" />
+      <workItem from="1751001004835" duration="16671000" />
     </task>
     <servers />
   </component>
@@ -182,16 +185,6 @@
           <line>7</line>
           <option name="timeStamp" value="67" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/services/ReadEmailFromGoogle.py</url>
-          <line>108</line>
-          <option name="timeStamp" value="128" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/services/ReadEmailFromGoogle.py</url>
-          <line>112</line>
-          <option name="timeStamp" value="131" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -203,7 +196,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/gmail_download_all_emails$main.coverage" NAME="main Coverage Results" MODIFIED="1751016666108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/gmail_download_all_emails$main.coverage" NAME="main Coverage Results" MODIFIED="1751017831997" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/gmail_download_all_emails$gmail_download_emails.coverage" NAME="gmail_download_emails Coverage Results" MODIFIED="1750993460455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gmail_download_all_emails$gmail_download_emails__1_.coverage" NAME="gmail_download_emails (1) Coverage Results" MODIFIED="1751004214214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/old" />
   </component>

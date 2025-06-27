@@ -23,6 +23,8 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
     def get_email_body(self, payload):
         plain_text_content = ""
         html_content = ""
+        other_content = ""
+        mime_type = ""
         errors = []
 
         if not payload:
@@ -34,6 +36,8 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
         while parts_to_process:
             plain_text_content = ""
             html_content = ""
+            mime_type = ""
+            other_content = ""
             errors = []
             part = parts_to_process.pop(0)
 
@@ -52,6 +56,7 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
             mime_type = part.get('mimeType', '')
 
 
+
             try:
                 decoded_data = base64.urlsafe_b64decode(data).decode('utf-8')
 
@@ -63,19 +68,23 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
                     html_content += decoded_data
                     if not html_content:
                         html_content = "NO CONTENT"
+                else:
+                    other_content += decoded_data
+                    if not other_content:
+                        other_content = "NO CONTENT OTHER"
 
             except (binascii.Error, UnicodeDecodeError) as e:
                 errors.append(e)
                 continue
 
-        return EmailBodyDTO(plain_text_content, html_content, errors)
+        return EmailBodyDTO(mime_type, plain_text_content, html_content, other_content, errors)
 
     def get_email_headers(self, payload) -> HeadersDTO:
         headers = payload.get('headers')
         subject = next((d['value'] for d in headers if d['name'] == 'Subject'), None)
         sender = next((d['value'] for d in headers if d['name'] == 'From'), None)
         date_header = next((d['value'] for d in headers if d['name'] == 'Date'), None)
-        return HeadersDTO(sender=sender, date_header=date_header, subject=subject)
+        return HeadersDTO(sender, date_header, subject)
 
     def pars_email(self, payload, id_message) -> EmailParserDTO:
         try:
@@ -108,6 +117,11 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
                 file = file + ".html"
                 content = email_data.body.html
 
+            if len(email_data.body.others.strip()) > 0:
+                print(f"Tamanhho: {len(email_data.body.others.strip())}")
+                file = file + ".otr"
+                content = email_data.body.others
+
             if len(email_data.body.errors) > 0:
                 print(f"Tamanhho: {len(email_data.body.errors)}")
                 file = file + ".log"
@@ -116,7 +130,10 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
             if not content:
                 file = file + ".txt"
 
-            osUtils.create_file(FileDTO(content, directory_path, file))
+            if not email_data.body.mime_type:
+                email_data.body.mime_type = "other"
+
+            osUtils.create_file(FileDTO(email_data.body.mime_type, content, directory_path, file))
 
             email_parsed =  EmailParserDTO(payload, email_data.headers, email_data.body, email_data.date_time, directory_path,
                                               file)
@@ -128,6 +145,7 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
 
     def show_email_data(self, email_data: EmailDataDTO):
         print(f"Msg ID: {email_data.message_id}")
+        print(f"MimeType: {email_data.body.mime_type}")
         print(f"From: {email_data.headers.sender}")
         print(f"Date: {email_data.date_time.formated_date_full}")
         print(f"Subject: {email_data.headers.subject}")

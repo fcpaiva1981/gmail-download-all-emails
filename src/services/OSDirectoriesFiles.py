@@ -38,6 +38,9 @@ class OSDirectoriesFiles(IOSDirectoriesFiles):
             file_name = re.sub(r'[^a-zA-Z0-9_]', '', file_name_array[0]) + "." + file_name_array[1]
             path = file_dto.file_path + self.get_os_path_separator() + file_name
             with open(path, "w", encoding="utf-8") as f:
+                f.write(file_dto.mime_type)
+                line = '-' * 100
+                f.write(line)
                 f.write(file_dto.content)
             print(f"File '{file_name}' created and written to successfully.")
             return file_name
