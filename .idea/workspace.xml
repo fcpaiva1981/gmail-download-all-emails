@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="709af90e-2cc9-4358-84f2-8d046ce14241" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/utils/create_directory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/create_file_from_email.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_messages_gmail.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gmail_download_emails.py" beforeDir="false" afterPath="$PROJECT_DIR$/gmail_download_emails.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/format_datetime.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/format_datetime.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/read_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/read_email.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +102,7 @@
       <workItem from="1750963759154" duration="28000" />
       <workItem from="1750963928723" duration="1889000" />
       <workItem from="1750970136561" duration="1344000" />
-      <workItem from="1750978490625" duration="12359000" />
+      <workItem from="1750978490625" duration="13820000" />
     </task>
     <servers />
   </component>
@@ -110,16 +111,16 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/read_email.py</url>
-          <line>33</line>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/gmail_download_all_emails$gmail_download_emails.coverage" NAME="gmail_download_emails Coverage Results" MODIFIED="1750990624627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gmail_download_all_emails$gmail_download_emails.coverage" NAME="gmail_download_emails Coverage Results" MODIFIED="1750992219578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
