@@ -5,10 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="709af90e-2cc9-4358-84f2-8d046ce14241" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dto/FileDTO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dto/FormatedDateDTO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/IOSDirectoriesFiles.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/IUtilsFunctions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/OSDirectoriesFiles.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/UtilsFunctions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmail_download_emails.py" beforeDir="false" afterPath="$PROJECT_DIR$/gmail_download_emails.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/create_file_from_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/create_file_from_email.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/format_datetime.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/format_datetime.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_credentials.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/get_credentials.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmail_download_emails.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/gmail_download_emails.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/create_directory.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/utils/create_directory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/create_file_from_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/utils/create_file_from_email.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/format_datetime.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/utils/format_datetime.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/read_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/utils/read_email.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,22 +50,61 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.gmail_download_emails.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.gmail_download_emails (1).executor": "Debug",
+    "Python.gmail_download_emails.executor": "Debug",
+    "Python.main.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/projects/Ptyhon/gmail-download-all-emails/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\Ptyhon\gmail-download-all-emails\src" />
+      <recent name="D:\projects\Ptyhon\gmail-download-all-emails" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\Ptyhon\gmail-download-all-emails\src" />
+      <recent name="D:\projects\Ptyhon\gmail-download-all-emails\src\google-gmail" />
+      <recent name="D:\projects\Ptyhon\gmail-download-all-emails\old" />
+      <recent name="D:\projects\Ptyhon\gmail-download-all-emails\src\google-gmail\services" />
+      <recent name="D:\projects\Ptyhon\gmail-download-all-emails\src\google-gmail\interfaces" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="gmail_download_emails (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="gmail-download-all-emails" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/old" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/old/gmail_download_emails.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="gmail_download_emails" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="gmail-download-all-emails" />
       <option name="ENV_FILES" value="" />
@@ -66,7 +119,30 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gmail_download_emails.py" />
+      <option name="SCRIPT_NAME" value="D:\projects\Ptyhon\gmail-download-all-emails\old\gmail_download_emails.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="gmail-download-all-emails" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -77,6 +153,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.gmail_download_emails (1)" />
         <item itemvalue="Python.gmail_download_emails" />
       </list>
     </recent_temporary>
@@ -101,6 +179,10 @@
       <workItem from="1750963928723" duration="1889000" />
       <workItem from="1750970136561" duration="1344000" />
       <workItem from="1750978490625" duration="14869000" />
+      <workItem from="1750998024162" duration="22000" />
+      <workItem from="1750998300901" duration="961000" />
+      <workItem from="1751000002574" duration="441000" />
+      <workItem from="1751001004835" duration="5799000" />
     </task>
     <servers />
   </component>
@@ -111,9 +193,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/create_file_from_email.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="59" />
+          <url>file://$PROJECT_DIR$/src/main.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -126,6 +208,8 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/gmail_download_all_emails$main.coverage" NAME="main Coverage Results" MODIFIED="1751006839417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/gmail_download_all_emails$gmail_download_emails.coverage" NAME="gmail_download_emails Coverage Results" MODIFIED="1750993460455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/gmail_download_all_emails$gmail_download_emails__1_.coverage" NAME="gmail_download_emails (1) Coverage Results" MODIFIED="1751004214214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/old" />
   </component>
 </project>

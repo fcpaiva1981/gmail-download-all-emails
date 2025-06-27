@@ -1,5 +1,5 @@
 import re
-from utils.create_directory import get_path_os_separator
+from old.utils.create_directory import get_path_os_separator
 
 
 def create_file(content, file_path ,file_name):
@@ -11,5 +11,7 @@ def create_file(content, file_path ,file_name):
         with open(path, "w", encoding="utf-8") as f:
             f.write(content)
         print(f"File '{file_name}' created and written to successfully.")
+        return file_name
     except IOError as e:
         print(f"Error creating file: {e}")
+        return None
