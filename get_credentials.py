@@ -6,6 +6,9 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 
 
 def get_credentials(scopesUrl, pathCredentials: str, pathToken: str):
+
+    creds = None
+
     if os.path.exists(pathToken):
         print("Path Token Exists")
         try:
@@ -25,3 +28,5 @@ def get_credentials(scopesUrl, pathCredentials: str, pathToken: str):
 
         with open(pathToken, 'w') as token:
             token.write(creds.to_json())
+
+    return creds

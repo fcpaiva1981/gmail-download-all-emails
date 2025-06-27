@@ -14,3 +14,9 @@ def get_email_body(payload):
         data = payload['body']['data']
         return base64.urlsafe_b64decode(data.encode('ASCII')).decode('utf-8')
     return ""
+
+def get_email_headers(headers):
+    subject = next((d['value'] for d in headers if d['name'] == 'Subject'), None)
+    sender = next((d['value'] for d in headers if d['name'] == 'From'), None)
+    date_header = next((d['value'] for d in headers if d['name'] == 'Date'), None)
+    return [sender, date_header, subject]

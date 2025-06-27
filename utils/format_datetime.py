@@ -2,7 +2,7 @@ import locale
 from dateutil import parser
 
 
-def formatDate(date: str):
+def format_date(date: str):
     try:
         locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
     except locale.Error:
