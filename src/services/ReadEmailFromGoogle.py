@@ -1,5 +1,6 @@
 import base64
 import binascii
+import sys
 
 from googleapiclient.errors import HttpError
 
@@ -86,7 +87,7 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
         date_header = next((d['value'] for d in headers if d['name'] == 'Date'), None)
         return HeadersDTO(sender, date_header, subject)
 
-    def pars_email(self, payload, id_message) -> EmailParserDTO:
+    def pars_email(self, payload, id_message, total, index) -> EmailParserDTO:
         try:
             content = ""
             osUtils = OSDirectoriesFiles()
@@ -97,33 +98,38 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
             email_data = EmailDataDTO(id_message,
                                       headers,
                                       body,
-                                      date)
+                                      date,
+                                      "",
+                                      False,
+                                      "",
+                                      index,
+                                      total)
 
             directory_path = self.envs.path_output_data + osUtils.get_os_path_separator() + email_data.date_time.date_without_time
+            email_data.path = directory_path
 
-            osUtils.create_directory(directory_path)
+            email_data.path_created = osUtils.create_directory(directory_path)
 
             file = email_data.headers.sender.split('<')[0]
             file = file.replace('.', '_')
             file = file.strip() + "_" + email_data.date_time.date_to_create_directory
 
+
+            email_data.file_name = file
+
             if len(email_data.body.txt.strip()) > 0:
-                print(f"Tamanhho: {len(email_data.body.txt.strip())}")
                 file = file + ".txt"
                 content = email_data.body.txt
 
             if len(email_data.body.html.strip()) > 0:
-                print(f"Tamanhho: {len(email_data.body.html.strip())}")
                 file = file + ".html"
                 content = email_data.body.html
 
             if len(email_data.body.others.strip()) > 0:
-                print(f"Tamanhho: {len(email_data.body.others.strip())}")
                 file = file + ".otr"
                 content = email_data.body.others
 
             if len(email_data.body.errors) > 0:
-                print(f"Tamanhho: {len(email_data.body.errors)}")
                 file = file + ".log"
                 content = '\n'.join(email_data.body.errors)
 
@@ -133,20 +139,60 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
             if not email_data.body.mime_type:
                 email_data.body.mime_type = "other"
 
+            self.show_email_data(email_data)
+
             osUtils.create_file(FileDTO(email_data.body.mime_type, content, directory_path, file))
 
             email_parsed =  EmailParserDTO(payload, email_data.headers, email_data.body, email_data.date_time, directory_path,
                                               file)
-            self.show_email_data(email_data)
+
             return email_parsed
 
         except HttpError as error:
             print(f"An HTTP error occurred: {error}")
 
     def show_email_data(self, email_data: EmailDataDTO):
-        print(f"Msg ID: {email_data.message_id}")
+        print(f"Posição: {email_data.index} de {email_data.total}")
+        print(f"E-mail ID: {email_data.message_id}")
+        print("*" * 100)
+        print(f"Diretório: {email_data.path}")
+        if email_data.path_created:
+            print(f"Diretório criado comm sucesso ou já existente.")
+        else:
+            print(f"Não foi possível criar o diretório.")
+            sys.exit(0)
+        print(f"Arquivo: {email_data.file_name}")
+
+        size_body = 0
+
+        if len(email_data.body.txt.strip()) > 0:
+           size_body = len(email_data.body.txt.strip())
+
+        if len(email_data.body.html.strip()) > 0:
+            size_body = len(email_data.body.html.strip())
+
+        if len(email_data.body.others.strip()) > 0:
+            size_body = len(email_data.body.others.strip())
+
+        if len(email_data.body.errors) > 0:
+            size_body = len(email_data.body.errors)
+
+        print(f"Tamanho do body carateres : {size_body}")
+
+
+        print("*" * 100)
+
         print(f"MimeType: {email_data.body.mime_type}")
         print(f"From: {email_data.headers.sender}")
         print(f"Date: {email_data.date_time.formated_date_full}")
         print(f"Subject: {email_data.headers.subject}")
+        if self.envs.show_body == "S":
+            print("-" * 100)
+            print(f"Body TXT: {email_data.body.txt}")
+            print("-" * 100)
+            print(f"Body HTML: {email_data.body.html}")
+            print("-" * 100)
+            print(f"Body OTHER: {email_data.body.others}")
+            print("-" * 100)
+            print(f"Erros: {email_data.body.errors}")
         print("-" * 100)

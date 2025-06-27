@@ -45,7 +45,8 @@ class CredentialsGmail(ICredentialsGmail):
         events_data = EnvsDTO(os.getenv('SCOPES'),
                               os.getenv('PATH_CREDNTIALS'),
                               os.getenv('PATH_TOKEN'),
-                              os.getenv('OUTPUT_DATA'))
+                              os.getenv('OUTPUT_DATA'),
+                              os.getenv('SHOW_BODY'))
 
         envs_DTO = self.fix_paths(events_data)
 
@@ -54,6 +55,7 @@ class CredentialsGmail(ICredentialsGmail):
         print(f"Credentials: {envs_DTO.path_credentials}")
         print(f"Path Token: {envs_DTO.path_token}")
         print(f"Path Output Data: {envs_DTO.path_output_data}")
+        print(f"Show body: {envs_DTO.show_body}")
         print("=" * 100)
 
         return envs_DTO

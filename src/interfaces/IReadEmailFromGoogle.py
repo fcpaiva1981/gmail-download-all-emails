@@ -17,9 +17,9 @@ class IReadEmailFromGoogle(abc.ABC):
         pass
 
     @abc.abstractmethod
-    def pars_email(self, payload, id_message) -> EmailParserDTO:
+    def pars_email(self, payload, id_message, total, index) -> EmailParserDTO:
         pass
 
     @abc.abstractmethod
-    def show_email_data(self, emailData: EmailDataDTO):
+    def show_email_data(self, emailData: EmailDataDTO, total, index):
         pass

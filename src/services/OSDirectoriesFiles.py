@@ -8,12 +8,11 @@ from src.interfaces.IOSDirectoriesFiles import IOSDirectoriesFiles
 class OSDirectoriesFiles(IOSDirectoriesFiles):
 
     def __init__(self):
-        print("\n")
+        print("")
 
     def create_directory(self, directory_name) -> bool:
         try:
             os.makedirs(directory_name, exist_ok=True)
-            print(f"Created directory '{directory_name}'  created successfully or already exists.")
             return True
         except OSError as e:
             print(f"Error creating directory '{directory_name}': {e}")
@@ -34,7 +33,6 @@ class OSDirectoriesFiles(IOSDirectoriesFiles):
         try:
             file_name = file_dto.file_name.replace(' ', '_').lower()
             file_name_array = file_name.split('.')
-            print(file_name_array)
             file_name = re.sub(r'[^a-zA-Z0-9_]', '', file_name_array[0]) + "." + file_name_array[1]
             path = file_dto.file_path + self.get_os_path_separator() + file_name
             with open(path, "w", encoding="utf-8") as f:
