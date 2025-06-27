@@ -18,7 +18,7 @@ class OSDirectoriesFiles(IOSDirectoriesFiles):
     def getOsPathSeparator(self) -> str:
         return os.sep
 
-    def getPathApp(self, path) -> str:
+    def transformEnvPropInPath(self, path) -> str:
         str_tmp = path.split(";")
         return self.getOsPathSeparator().join(str_tmp)
 
