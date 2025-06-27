@@ -28,7 +28,8 @@ class UtilsFunctions(IUtilsFunctions):
         only_date = now.strftime("%Y-%m-%d")
         only_date_time = now.strftime("%Y-%m-%d_%H%M%S")
 
-        return [now, pt_br_format, only_date, only_date_time]
+        return FormatedDateDTO(date, pt_br_format, only_date, only_date_time)
+
 
     def jsonSerializer(self, obj) -> Any | None:
         if hasattr(obj, '__dict__'):

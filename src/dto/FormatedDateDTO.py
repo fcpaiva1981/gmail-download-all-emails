@@ -1,5 +1,9 @@
+from dataclasses import dataclass
 
+
+@dataclass
 class FormatedDateDTO:
+
      header_date: str
      formated_date_full: str
      date_without_time: str

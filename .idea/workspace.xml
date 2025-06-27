@@ -5,24 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="709af90e-2cc9-4358-84f2-8d046ce14241" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/FileDTO.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/FormatedDateDTO.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/IOSDirectoriesFiles.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/IUtilsFunctions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/OSDirectoriesFiles.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/UtilsFunctions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dto/EmailBodyDTO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dto/HeadersDTO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interfaces/IReadEmailFromGoogle.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/ReadEmailFromGoogle.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_credentials.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/get_credentials.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gmail_download_emails.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/gmail_download_emails.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/create_directory.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/utils/create_directory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/create_file_from_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/utils/create_file_from_email.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/format_datetime.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/utils/format_datetime.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/read_email.py" beforeDir="false" afterPath="$PROJECT_DIR$/old/utils/read_email.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/FormatedDateDTO.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/FormatedDateDTO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/UtilsFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UtilsFunctions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +172,7 @@
       <workItem from="1750998024162" duration="22000" />
       <workItem from="1750998300901" duration="961000" />
       <workItem from="1751000002574" duration="441000" />
-      <workItem from="1751001004835" duration="5799000" />
+      <workItem from="1751001004835" duration="7229000" />
     </task>
     <servers />
   </component>
@@ -191,13 +181,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/main.py</url>
-          <line>7</line>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -208,7 +191,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/gmail_download_all_emails$main.coverage" NAME="main Coverage Results" MODIFIED="1751006839417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/gmail_download_all_emails$main.coverage" NAME="main Coverage Results" MODIFIED="1751007552028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/gmail_download_all_emails$gmail_download_emails.coverage" NAME="gmail_download_emails Coverage Results" MODIFIED="1750993460455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gmail_download_all_emails$gmail_download_emails__1_.coverage" NAME="gmail_download_emails (1) Coverage Results" MODIFIED="1751004214214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/old" />
   </component>
