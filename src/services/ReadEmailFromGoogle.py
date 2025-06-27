@@ -32,6 +32,9 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
         parts_to_process = [payload]
 
         while parts_to_process:
+            plain_text_content = ""
+            html_content = ""
+            errors = []
             part = parts_to_process.pop(0)
 
             if 'parts' in part and part.get('parts'):
@@ -48,13 +51,18 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
 
             mime_type = part.get('mimeType', '')
 
+
             try:
                 decoded_data = base64.urlsafe_b64decode(data).decode('utf-8')
 
                 if 'text/plain' in mime_type:
                     plain_text_content += decoded_data
+                    if not plain_text_content:
+                        plain_text_content = "NO CONTENT"
                 elif 'text/html' in mime_type:
                     html_content += decoded_data
+                    if not html_content:
+                        html_content = "NO CONTENT"
 
             except (binascii.Error, UnicodeDecodeError) as e:
                 errors.append(e)
@@ -71,6 +79,7 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
 
     def pars_email(self, payload, id_message) -> EmailParserDTO:
         try:
+            content = ""
             osUtils = OSDirectoriesFiles()
             utils = UtilsFunctions()
             headers = self.get_email_headers(payload)
@@ -86,7 +95,8 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
             osUtils.create_directory(directory_path)
 
             file = email_data.headers.sender.split('<')[0]
-            file = file.strip() + "." + email_data.date_time.date_to_create_directory
+            file = file.replace('.', '_')
+            file = file.strip() + "_" + email_data.date_time.date_to_create_directory
 
             if len(email_data.body.txt.strip()) > 0:
                 print(f"Tamanhho: {len(email_data.body.txt.strip())}")
@@ -102,6 +112,9 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
                 print(f"Tamanhho: {len(email_data.body.errors)}")
                 file = file + ".log"
                 content = '\n'.join(email_data.body.errors)
+
+            if not content:
+                file = file + ".txt"
 
             osUtils.create_file(FileDTO(content, directory_path, file))
 

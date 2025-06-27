@@ -34,8 +34,8 @@ class OSDirectoriesFiles(IOSDirectoriesFiles):
         try:
             file_name = file_dto.file_name.replace(' ', '_').lower()
             file_name_array = file_name.split('.')
-            file_name = re.sub(r'[^a-zA-Z0-9_]', '', file_name_array[0]) + "_" + file_name_array[1] + "." + \
-                        file_name_array[2]
+            print(file_name_array)
+            file_name = re.sub(r'[^a-zA-Z0-9_]', '', file_name_array[0]) + "." + file_name_array[1]
             path = file_dto.file_path + self.get_os_path_separator() + file_name
             with open(path, "w", encoding="utf-8") as f:
                 f.write(file_dto.content)
