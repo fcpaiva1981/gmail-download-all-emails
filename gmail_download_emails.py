@@ -41,19 +41,27 @@ def main():
 
         for message in messages:
             msg = service.users().messages().get(userId='me', id=message['id']).execute()
-            payload = msg['payload']
-            headers = get_email_headers(payload['headers'])
-            body = get_email_body(payload['body'])
-            dateTime = format_date(headers[1])
+            payload = msg.get('payload')
+            headers = get_email_headers(payload.get('headers'))
+            body = get_email_body(payload)
+            date_time = format_date(headers[1])
 
+
+            print(f"Msg ID: {message['id']}")
             print(f"From: {headers[0]}")
-            print(f"Date: {dateTime[1]}")
+            print(f"Date: {date_time[1]}")
             print(f"Subject: {headers[2]}")
             print(f"Body:")
             print("-" * 30)
-            print(f"\n{body}")
 
+            if len(body.get('text').strip()) > 0:
+                print(f"\n{body.get('text')}")
 
+            if len(body.get('html').strip()) > 0:
+                print(f"\n{body.get('html')}")
+
+            if len(body.get('errors')) > 0:
+                print(f"\n{'\n'.join(body.get('exception'))}")
 
     except HttpError as error:
         print(f"An HTTP error occurred: {error}")
