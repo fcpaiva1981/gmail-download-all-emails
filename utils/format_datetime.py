@@ -17,5 +17,6 @@ def format_date(date: str):
 
     pt_br_format = now.strftime("%A, %d de %B de %Y")
     only_date = now.strftime("%Y-%m-%d")
+    only_date_time = now.strftime("%Y-%m-%d_%H%M%S")
 
-    return [now, pt_br_format, only_date]
+    return [now, pt_br_format, only_date, only_date_time]

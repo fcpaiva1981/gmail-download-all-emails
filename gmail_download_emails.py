@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 
 from get_credentials import get_credentials
 from utils.create_directory import get_path_os, create_directory, get_path_os_separator
+from utils.create_file_from_email import create_file
 from utils.read_email import get_email_body
 
 from utils.format_datetime import format_date
@@ -53,7 +54,8 @@ def main():
             body = get_email_body(payload)
             date_time = format_date(headers[1])
 
-            create_directory(path_output_data+get_path_os_separator()+date_time[2])
+            file_path = path_output_data+get_path_os_separator()+date_time[2]
+            create_directory(file_path)
 
             print(f"Msg ID: {message['id']}")
             print(f"From: {headers[0]}")
@@ -62,14 +64,25 @@ def main():
             print(f"Body:")
             print("-" * 100)
 
+            file_from_name = headers[0].split('<')[0]
+            file_from_name = file_from_name.strip()+"."+date_time[3]
+
             if len(body.get('text').strip()) > 0:
                 print(f"\n{len(body.get('text').strip())}")
+                file_from_name = file_from_name + ".txt"
+                content = body.get('text')
 
             if len(body.get('html').strip()) > 0:
                 print(f"\n{len(body.get('html').strip())}")
+                file_from_name = file_from_name + ".html"
+                content = body.get('html')
 
             if len(body.get('errors')) > 0:
-                print(f"\n{'\n'.join(len(body.get('errors')))}")
+                print(f"\n{len(body.get('errors'))}")
+                file_from_name = file_from_name + ".log"
+                content = '\n'.join(len(body.get('errors')))
+
+            create_file(content, file_path, file_from_name)
 
     except HttpError as error:
         print(f"An HTTP error occurred: {error}")
