@@ -6,14 +6,14 @@ from src.dto.FormatedDateDTO import FormatedDateDTO
 class IUtilsFunctions(abc.ABC):
 
     @abc.abstractmethod
-    def formatDate(self, date: str) -> FormatedDateDTO:
+    def format_date(self, date: str) -> FormatedDateDTO:
         pass
 
     @abc.abstractmethod
-    def jsonSerializer(self, obj) -> str:
+    def json_serializer(self, obj) -> str:
         pass
 
     @abc.abstractmethod
-    def jsonDumps(self, obj) -> str:
+    def json_dmps(self, obj) -> str:
         pass
 

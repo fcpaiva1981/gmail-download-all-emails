@@ -1,6 +1,8 @@
 import base64
 import binascii
+
 from googleapiclient.errors import HttpError
+
 from src.dto.EmailBodyDTO import EmailBodyDTO
 from src.dto.EmailDataDTO import EmailDataDTO
 from src.dto.EmailParserDTO import EmailParserDTO
@@ -14,10 +16,11 @@ from src.services.UtilsFunctions import UtilsFunctions
 
 class ReadEmailFromGoogle(IReadEmailFromGoogle):
 
-    def __init__(self, envs: EnvsDTO):
+    def __init__(self, creds, envs: EnvsDTO):
         self.envs = envs
+        self.credentials = creds
 
-    def getEmailBody(self, payload):
+    def get_email_body(self, payload):
         plain_text_content = ""
         html_content = ""
         errors = []
@@ -59,58 +62,60 @@ class ReadEmailFromGoogle(IReadEmailFromGoogle):
 
         return EmailBodyDTO(plain_text_content, html_content, errors)
 
-    def getEmailHeaders(self, payload) -> HeadersDTO:
+    def get_email_headers(self, payload) -> HeadersDTO:
         headers = payload.get('headers')
         subject = next((d['value'] for d in headers if d['name'] == 'Subject'), None)
         sender = next((d['value'] for d in headers if d['name'] == 'From'), None)
         date_header = next((d['value'] for d in headers if d['name'] == 'Date'), None)
         return HeadersDTO(sender=sender, date_header=date_header, subject=subject)
 
-    def parseEmail(self, payload, id_message) -> EmailParserDTO:
+    def pars_email(self, payload, id_message) -> EmailParserDTO:
         try:
-            email_data = EmailDataDTO()
             osUtils = OSDirectoriesFiles()
             utils = UtilsFunctions()
+            headers = self.get_email_headers(payload)
+            body = self.get_email_body(payload)
+            date = utils.format_date(headers.date_header)
+            email_data = EmailDataDTO(id_message,
+                                      headers,
+                                      body,
+                                      date)
 
-            email_data.headers = self.getEmailHeaders(payload)
-            email_data.body = self.getEmailBody(payload)
-            email_data.date_time = utils.formatDate(email_data.headers.date_header[1])
+            directory_path = self.envs.path_output_data + osUtils.get_os_path_separator() + email_data.date_time.date_without_time
 
-            directory_path = (self.envs.path_output_data()
-                              + osUtils.getOsPathSeparator()
-                              + email_data.date_time[2])
-
-            osUtils.createDirectory(directory_path)
+            osUtils.create_directory(directory_path)
 
             file = email_data.headers.sender.split('<')[0]
-            file = file.strip()+"."+email_data.date_time[3]
+            file = file.strip() + "." + email_data.date_time.date_to_create_directory
 
             if len(email_data.body.txt.strip()) > 0:
-                print(f"\n{len(email_data.body.txt.strip())}")
+                print(f"Tamanhho: {len(email_data.body.txt.strip())}")
                 file = file + ".txt"
                 content = email_data.body.txt
 
             if len(email_data.body.html.strip()) > 0:
-                print(f"\n{len(email_data.body.html.strip())}")
+                print(f"Tamanhho: {len(email_data.body.html.strip())}")
                 file = file + ".html"
                 content = email_data.body.html
 
             if len(email_data.body.errors) > 0:
-                print(f"\n{len(email_data.body.errors)}")
+                print(f"Tamanhho: {len(email_data.body.errors)}")
                 file = file + ".log"
                 content = '\n'.join(email_data.body.errors)
 
+            osUtils.create_file(FileDTO(content, directory_path, file))
 
-            osUtils.createFile( FileDTO(content, directory_path , file))
+            email_parsed =  EmailParserDTO(payload, email_data.headers, email_data.body, email_data.date_time, directory_path,
+                                              file)
+            self.show_email_data(email_data)
+            return email_parsed
 
         except HttpError as error:
             print(f"An HTTP error occurred: {error}")
 
-
-    def showEmailData(self, email_data: EmailDataDTO):
+    def show_email_data(self, email_data: EmailDataDTO):
         print(f"Msg ID: {email_data.message_id}")
         print(f"From: {email_data.headers.sender}")
-        print(f"Date: {email_data.date_time[1]}")
+        print(f"Date: {email_data.date_time.formated_date_full}")
         print(f"Subject: {email_data.headers.subject}")
-        print(f"Body:")
         print("-" * 100)

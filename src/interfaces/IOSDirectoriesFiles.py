@@ -6,17 +6,17 @@ from src.dto.FileDTO import FileDTO
 class IOSDirectoriesFiles(abc.ABC):
 
     @abc.abstractmethod
-    def createDirectory(self, directory_name) -> bool:
+    def create_directory(self, directory_name) -> bool:
         pass
 
     @abc.abstractmethod
-    def getOsPathSeparator(self) -> str:
+    def get_os_path_separator(self) -> str:
         pass
 
     @abc.abstractmethod
-    def getPathApp(self,path: str) -> str:
+    def get_path_app(self, path: str) -> str:
         pass
 
     @abc.abstractmethod
-    def createFile(self, fileDto: FileDTO) -> str:
+    def create_file(self, fileDto: FileDTO) -> str:
         pass

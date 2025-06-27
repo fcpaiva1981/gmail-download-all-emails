@@ -1,7 +1,5 @@
-import locale
 import json
-from dataclasses import dataclass, asdict
-from datetime import date
+import locale
 from typing import Any
 
 from dateutil import parser
@@ -12,7 +10,7 @@ from src.interfaces.IUtilsFunctions import IUtilsFunctions
 
 class UtilsFunctions(IUtilsFunctions):
 
-    def formatDate(self, date: str) -> FormatedDateDTO:
+    def format_date(self, date: str) -> FormatedDateDTO:
         try:
             locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
         except locale.Error:
@@ -30,15 +28,14 @@ class UtilsFunctions(IUtilsFunctions):
 
         return FormatedDateDTO(date, pt_br_format, only_date, only_date_time)
 
-
-    def jsonSerializer(self, obj) -> Any | None:
+    def json_serializer(self, obj) -> Any | None:
         if hasattr(obj, '__dict__'):
             return obj.__dict__
         return None
 
-    def jsonDumps(self, obj) -> str:
+    def json_dmps(self, obj) -> str:
         return json.dumps(obj,
                           indent=4,
-                          default=self.jsonSerializer,
+                          default=self.json_serializer,
                           ensure_ascii=False
                           )

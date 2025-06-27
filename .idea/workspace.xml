@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="709af90e-2cc9-4358-84f2-8d046ce14241" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dto/EmailDataDTO.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/EmailParserDTO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/FileDTO.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/FileDTO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conf/Credentials.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/Credentials.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/EnvsDTO.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/EnvsDTO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/ICredentialsGmail.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/ICredentialsGmail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/IOSDirectoriesFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/IOSDirectoriesFiles.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interfaces/IReadEmailFromGoogle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/IReadEmailFromGoogle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/IUtilsFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/IUtilsFunctions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/OSDirectoriesFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/OSDirectoriesFiles.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/ReadEmailFromGoogle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ReadEmailFromGoogle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/UtilsFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/UtilsFunctions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +175,7 @@
       <workItem from="1750998024162" duration="22000" />
       <workItem from="1750998300901" duration="961000" />
       <workItem from="1751000002574" duration="441000" />
-      <workItem from="1751001004835" duration="10207000" />
+      <workItem from="1751001004835" duration="14518000" />
     </task>
     <servers />
   </component>
@@ -179,6 +184,38 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/dto/EnvsDTO.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/services/OSDirectoriesFiles.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/services/ReadEmailFromGoogle.py</url>
+          <line>103</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/services/ReadEmailFromGoogle.py</url>
+          <line>93</line>
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/services/ReadEmailFromGoogle.py</url>
+          <line>98</line>
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/services/ReadEmailFromGoogle.py</url>
+          <line>107</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -189,7 +226,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/gmail_download_all_emails$main.coverage" NAME="main Coverage Results" MODIFIED="1751007552028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/gmail_download_all_emails$main.coverage" NAME="main Coverage Results" MODIFIED="1751015583048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/gmail_download_all_emails$gmail_download_emails.coverage" NAME="gmail_download_emails Coverage Results" MODIFIED="1750993460455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/gmail_download_all_emails$gmail_download_emails__1_.coverage" NAME="gmail_download_emails (1) Coverage Results" MODIFIED="1751004214214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/old" />
   </component>

@@ -4,9 +4,13 @@ import re
 from src.dto.FileDTO import FileDTO
 from src.interfaces.IOSDirectoriesFiles import IOSDirectoriesFiles
 
+
 class OSDirectoriesFiles(IOSDirectoriesFiles):
 
-    def createDirectory(self, directory_name) -> bool:
+    def __init__(self):
+        print("\n")
+
+    def create_directory(self, directory_name) -> bool:
         try:
             os.makedirs(directory_name, exist_ok=True)
             print(f"Created directory '{directory_name}'  created successfully or already exists.")
@@ -15,22 +19,26 @@ class OSDirectoriesFiles(IOSDirectoriesFiles):
             print(f"Error creating directory '{directory_name}': {e}")
             return False
 
-    def getOsPathSeparator(self) -> str:
+    def get_os_path_separator(self) -> str:
         return os.sep
 
-    def transformEnvPropInPath(self, path) -> str:
+    def get_path_app(self, path):
         str_tmp = path.split(";")
-        return self.getOsPathSeparator().join(str_tmp)
+        return self.get_os_path_separator().join(str_tmp)
 
-    def createFile(self, fileDto:FileDTO) -> str:
+    def transform_env_prop_in_path(self, path) -> str:
+        str_tmp = path.split(";")
+        return self.get_os_path_separator().join(str_tmp)
+
+    def create_file(self, file_dto: FileDTO) -> str:
         try:
-            file_name = fileDto.replace(' ', '_').lower()
+            file_name = file_dto.file_name.replace(' ', '_').lower()
             file_name_array = file_name.split('.')
             file_name = re.sub(r'[^a-zA-Z0-9_]', '', file_name_array[0]) + "_" + file_name_array[1] + "." + \
                         file_name_array[2]
-            path = fileDto.file_path + self.getOsPathSeparator()  + file_name
+            path = file_dto.file_path + self.get_os_path_separator() + file_name
             with open(path, "w", encoding="utf-8") as f:
-                f.write(fileDto.content)
+                f.write(file_dto.content)
             print(f"File '{file_name}' created and written to successfully.")
             return file_name
         except IOError as e:
