@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="709af90e-2cc9-4358-84f2-8d046ce14241" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dto/EnvsDTO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conf/Credentials.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conf/Credentials.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/ICredentials.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/ICredentialsGmail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/OSDirectoriesFiles.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/OSDirectoriesFiles.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dto/EmailDataDTO.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dto/EmailParserDTO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/FileDTO.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/FileDTO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interfaces/IReadEmailFromGoogle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/IReadEmailFromGoogle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/ReadEmailFromGoogle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ReadEmailFromGoogle.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,7 +170,7 @@
       <workItem from="1750998024162" duration="22000" />
       <workItem from="1750998300901" duration="961000" />
       <workItem from="1751000002574" duration="441000" />
-      <workItem from="1751001004835" duration="8196000" />
+      <workItem from="1751001004835" duration="10207000" />
     </task>
     <servers />
   </component>
